@@ -21,6 +21,7 @@ body {
 h1 {
     color: hsla(147, 12%, 15%, 0.753);
     font-size: 22px;
+    align-content: center;
 }
 h3{
     color:rgb(87, 57, 91)
@@ -29,19 +30,6 @@ h2{
     font-family: 'Poppins', sans-serif;
     font-size: 5.5vh;
     color:rgb(77, 73, 73);
-}
-nav a{
-    color: rgba(10, 11, 11, 0.89);
-    text-decoration: none;
-    width: 90px;
-    text-align: center;
-}
-nav a:hover{
-    color: rgb(87, 57, 91);
-    background-color: rgb(209, 209, 209);
-    border-radius: 5px;
-    padding: 5px;
-    font-weight: bolder;
 }
 header {
     display: flex;
@@ -60,19 +48,95 @@ header {
 } 
 nav {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
 }
+nav a{
+    color: rgba(10, 11, 11, 0.89);
+    text-decoration: none;
+    width: 90px;
+    text-align: center;
+}
+nav a:hover{
+    color: rgb(87, 57, 91);
+    background-color: rgb(209, 209, 209);
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bolder;
+}
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+.nav-list li a {
+    text-decoration: none;
+    color: #1c1c1c;
+}
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+.abrir-menu {
+    color: #1c1c1c;
+}
+.cerrar-menu {
+    color: #ececec;
+}
+.nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1c1c1c;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+.nav.visible {
+        opacity: 1;
+        visibility: visible;
+}
+.nav-list {
+        flex-direction: column;
+        align-items: end;
+}
+.nav-list li a {
+        color: #ecececec;
+}
+
 .hero {
     display: flex;   
+}
+.hero .caja h2{
+    display: flex;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vh;
+    padding: 2vh 5vw 3vh 5vw;
+    /*color:rgb(77, 73, 73);*/
+    color: #f3f3f3;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.hero .imagenInicio{
+    max-width: 100%;
+    clip-path: circle(65% at center);
+    align-items: center;
+    border-radius: 8px;
 }
 .imagenInicio{
     margin-left: 3vw;
     margin-top: 3vh; 
     margin-right: 2vw;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 }
 .caja{
     background-color: rgba(113, 63, 194, 0.713);
@@ -83,8 +147,7 @@ nav {
     margin-left: 2vw;
     padding: 2vh 2vw;
     word-spacing: 2px;
-    box-shadow: 0px 5px 5px rgb(37, 37, 37);
-    
+    box-shadow: 0px 5px 5px rgb(37, 37, 37); 
 }
 .laEmpresa h2{
     color: hsla(147, 12%, 15%, 0.753);
@@ -96,18 +159,10 @@ nav {
     margin-left: 2vw;
     margin-right: 2vw;
 }
-/*footer a{
-    color: rgb(41, 39, 42);
-    text-decoration: none;
-    display: flex;
-    margin-top: 90vh;
-    margin-bottom: 20vh;
-    justify-content: center;
-}*/
 h1 {
     animation-duration: 5s;
     animation-name: slidein;
-  }
+}
   main{     
     padding: 4vh 9vw; 
     display: flex;     
@@ -115,16 +170,62 @@ h1 {
     align-items: center;     
     gap: 10vh; 
 }
+main h1{
+    text-align: center;
+    color: rgba(126, 93, 170, 0.87);
+}
+form{
+   background: #fff;
+   padding: 40px 0;
+   box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+   border-radius: 10px;
+}
 .form{     
-    display: flex;     
-    flex-direction: column;     
-    gap: 5vh;     
-    width: 65%; 
+    margin:auto;    
+    width: 100%; 
 } 
 .form .inputContainer{     
-    display: flex;     
-    flex-direction: column;     
-    font-size: 19px; 
+    position: relative;
+    margin: 45px;
+} 
+textarea {    
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;  
+}
+textarea:focus{
+    outline: none;
+    color: dimgrey;
+}
+input
+{
+    background-color: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+input:focus{
+    outline: none;
+    color: dimgrey;
+}
+label{
+    color: var(--colorTextos);
+    font-size: 16px;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+input:focus label{
+    top: -14px;
+    font-size: 12px;
+    color: rgba(126, 93, 170, 0.87);
 } 
 .form .inputContainer input
 {     
@@ -147,8 +248,7 @@ h1 {
         color: rgba(124, 61, 196, 0.418);     
         border: 0.5px rgb(56, 53, 53) solid; 
 }
-.card-usuario
-{
+.card-usuario{
  display: flex;
  align-items: center;
  gap: 5vw;
@@ -159,21 +259,26 @@ h1 {
  padding: 10px;
  border: 1px black solid;
 }
-.card-usuario:hover
-{
+.card-usuario:hover{
     transition: 1s ease-in-out;
     background-color: white;
     color: black;
     border: 1px black solid;
 }
-.contenedorUsuarios
-{
+.contenedorUsuarios{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 3vh;
 }
-
+/*footer a{
+    color: rgb(41, 39, 42);
+    text-decoration: none;
+    display: flex;
+    margin-top: 90vh;
+    margin-bottom: 20vh;
+    justify-content: center;
+}*/
 footer{
     bottom: 0;
     left: 0;
@@ -244,8 +349,7 @@ footer{
     opacity: .4;
     font-weight: 200;
 }
-.container
-{
+.container{
     width: 100%;
     max-width: 1200px;
    /* height: 430px;*/
@@ -254,8 +358,7 @@ footer{
     justify-content: center;
     margin: auto;
 }
-.container .card
-{
+.container .card{
     width: 330px;
     height: 430px;
     border-radius: 8px;
@@ -264,32 +367,34 @@ footer{
     margin: 20px;
     text-align: center;
     transition: all 0.25;
-
 }
-.container .card:hover
-{
+.container .card:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0,0,0,0.2);
 }
-
-.container .card img
-{
+.container .card img{
     width: 330px;
     height: 220px;
 }
-
-.container .card h4
-{
+.container .card h4{
     font-weight: 600;
 }
-.container .card a
-{
+.container .card a{
     font-weight: 500;
     text-decoration: none;
     color: #3498db;
 }
-.card-container2
-{
+.container2{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    border: none;
+}
+.card-container2{
     width: 100%;
     max-width: 1200px;
     height: 430px;
@@ -298,11 +403,43 @@ footer{
     justify-content: center;
     margin: auto;
 }
-.card-container2 img
-{
+
+.container2 .card3:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+.container2 img{
     width: 330px;
     height: 220px;
 } 
+/*.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:crimson;
+    padding-top: 20px;
+}
+.card3
+{   
+    border: none;
+    width: 500px;
+    height: 530px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25;
+}
+.card-info {
+    font-size: 19px;
+    color: rgba(126, 93, 170, 0.87);   
+}
+.card-info h3{
+    font-size: 19px;
+    color:black;    
+}*/
+
 @keyframes slidein {
     from {
       margin-left: 0%;
@@ -318,10 +455,29 @@ footer{
         width: 150%;
       }
   }
-@media screen and (max-width: 922px){
+@media screen and (max-width: 920px){
     main{
         flex-direction: column;
     }
+    header h2{
+        font-size: 4vh;
+    }
+    .hero{
+       box-sizing: 6vw;
+    }
+    .hero .caja{
+       height: 65vh;
+       width: 30vw;
+    }
+    div h2{
+        font-size: 4vh;
+    }
+    .imagenInicio{
+       width: 60vw;
+       height: 60vh;
+    }
+}
+@media screen and (max-width: 720px){
     nav{
         display: none;
     }
@@ -331,30 +487,11 @@ footer{
     .btn-menu .menu-icon{
         font-size: 25px;
     }
-    header h2{
-        font-size: 25px;
-    }
-    .hero{
-       box-sizing: 6vw;
-    }
     .hero .caja{
-       height: 50vh;
+        height: 60vh;
     }
     div h2{
-        font-size: 27px;
-    }
-    .imagenInicio{
-       width: 60vw;
-       height: 60vh;
-    }
-    
-}
-@media screen and (max-width: 720px){
-    .hero .caja{
-        height: 48vh;
-    }
-    div h2{
-        font-size: 25px;
+        font-size: 4vh;
     }
     .imagenInicio{
        width: 60vw;
@@ -363,28 +500,48 @@ footer{
 }
 @media screen and (max-width: 650px){
     main h2{
-        font-size: 28px;
+        font-size: 4vh;
     }
     .hero .caja{
-        height: 35vh;
+        height: 60vh;
     }
     div h2 {
-        font-size: 18px;
+        font-size: 2.7vh;
     }
     .imagenInicio{
         width: 60vw;
         height: 60vh;
     }
 }
-@media screen and (max-width: 450px){
-    main h2{
-        font-size: 25px;
+@media screen and (max-width: 550px){
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
     }
-    .hero .caja{
-        height: 40vh;
+    main h2{
+        font-size: 4vh;
     }
     div h2 {
-        font-size: 15px;
+        font-size: 3vh;
+    }
+    .hero .caja{
+        height: 60vh;
+    }
+}
+@media screen and (max-width: 450px){
+    main h2{
+        font-size: 2vh;
+    }
+    .hero .caja{
+        height: 60vh;
+        width: 35vw;
+    }
+    div h2 {
+        font-size: 2vh;
     }
     .imagenInicio{
         width: 60vw;
