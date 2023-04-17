@@ -45,11 +45,9 @@ h1 {
         background-color: transparent;
         cursor: pointer;
     }
-
     .abrir-menu {
         color: #1c1c1c;
     }
-
     .cerrar-menu {
         color: #ececec;
     }
@@ -67,10 +65,12 @@ h1 {
     background-color: #1c1c1c;
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    z-index: 1;
 }
 .imagenInicio
 {
-    visibility: hidden;
+    position:relative;
+    z-index: -1;
 }
 .nav.visible {
     opacity: 1;
@@ -127,7 +127,7 @@ nav a:hover{
     font-size: 7vh;
     padding: 2vh 5vw 3vh 5vw;
     /*color:rgb(77, 73, 73);*/
-    color: #beb8c8;
+    color: #d8d0e3;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -153,9 +153,8 @@ nav a:hover{
     background-color: rgba(113, 63, 194, 0.713);
     border-radius: 8px;
     width: 30vw;
-    height: 100vh;
+    height: 103vh;
     margin-top: 5vh;
-    margin-left: 1vw;
     padding: 2vh 2vw;
     word-spacing: 2px;
     box-shadow: 0px 5px 5px rgb(37, 37, 37); 
@@ -173,7 +172,6 @@ nav a:hover{
 }
 .laEmpresa{
     position: relative;
-    margin-left: 2vw;
     margin-right: 2vw;
 }
 .laEmpresa h3{
@@ -524,7 +522,7 @@ footer{
         height: 65vh;
     }
     div h2{
-        font-size: 4vh;
+        font-size: 2vh;
     }
     .imagenInicio{
        width: 60vw;
@@ -536,11 +534,11 @@ footer{
         font-size: 4vh;
     }
     .hero .caja{
-        width:30vw;
+        width:35vw;
         height: 63vh;
     }
     .hero .caja h2{
-        font-size: 3vh;
+        font-size: 2vh;
     }
     div h2 {
         font-size: 4vh;
@@ -565,7 +563,7 @@ footer{
         font-size: 3vh;
     }
     .imagenInicio{
-        width: 60vw;
-        height: 60vh;
+        width: 50vw;
+        height: 50vh;
     }
 } 
